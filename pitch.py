@@ -7,13 +7,13 @@ import os
 import pyaudio
 import shutil
 import sys
-import wave
 from colors import color
 from datetime import datetime
 
 MIDRANGE_LOW = 160
 MIDRANGE_HIGH = 180
 SAMPLES = 1024
+
 
 def main():
     stream = get_audio_stream()
@@ -32,12 +32,12 @@ def main():
         # Compute the energy (volume) of the
         # current frame.
         volume = numpy.sum(samples**2)/len(samples)
-    
+
         # Floor for volume
         if volume > 0.0005:
 
             # Celing for pitch
-            if pitch > 50.0 and pitch < 1000.0:
+            if pitch > 50.0 and pitch < 500.0:
                 print_sample(volume, pitch)
 
 
@@ -46,7 +46,7 @@ def print_sample(volume, pitch):
 
     # Get the current date, chop off last 3 digits of microseconds to
     # get milliseconds
-    dt = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3];
+    dt = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
 
     pstr = "{:5.0f}".format(pitch)
     outstr = dt + " " + pstr + "hz  "  # 33 chars wide
@@ -64,7 +64,7 @@ def print_sample(volume, pitch):
     width = get_width()
     if width > (outstrwidth + 5):
         bar_space = width - (outstrwidth + 1)
-        min_bar = 110 
+        min_bar = 110
         max_bar = 260
 
         outbar = []
@@ -81,7 +81,7 @@ def print_sample(volume, pitch):
         outbar[pos] = color(outbar[pos], bg=22) + color("", bg="black")
 
         outstr = outstr + "".join(outbar)
-   
+
     print(outstr)
 
 
