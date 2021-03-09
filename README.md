@@ -35,27 +35,35 @@ Start a shell and change to the directory you cloned above.
 
 Create a virtualenv using the following commands on Linux:
 
-  python3 -m venv venv
-  source venv/bin/activate
-  pip install -r requirements.txt
+```
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 
 On Windows, do this:
 
-  python3 -m venv venv
-  venv\Scripts\activate
-  pip install -r requirements.txt
+```
+python3 -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+```
 
 Once this succeeds, you can run the app.
 
 To start the app, on Linux:
 
-  source venv/bin/activate
-  python3 pitch.py
+```
+source venv/bin/activate
+python3 pitch.py
+```
 
 To start the app, on Windows:
 
-  venv\Scripts\activate
-  python3 pitch.py
+```
+venv\Scripts\activate
+python3 pitch.py
+```
 
 To exit the application, use ctrl-c.
 
