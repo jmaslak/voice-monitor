@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+#
+# Copyright (c) 2021 by Joelle Maslak, All Rights Reserved
+# See LICENSE
+#
+
+# Inspired by:
 # https://github.com/aubio/aubio/issues/78
 
 import aubio
