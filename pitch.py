@@ -43,7 +43,7 @@ def main():
         if volume > 0.0005:
 
             # Celing for pitch
-            if pitch > 50.0 and pitch < 500.0:
+            if pitch > 70.0 and pitch < 500.0:
                 print_sample(volume, pitch)
 
 
